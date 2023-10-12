@@ -1,33 +1,43 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import Link from 'next/link';
-import Date from '../components/date';
 import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+  const data = await res.json()
+
   return {
-    props: {
-      allPostsData,
-    },
-  };
+    props: { data }
+  }
 }
 
-export default function Home({ allPostsData }) {
+export default function Home({ data }) {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Hi there hi there hi there hi there hi there hi there hi there hi there</p>
         <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          (This is a sample website - all data is fetched from{' '}
+          <a href="https://pokeapi.co">PokeAPI</a>)
         </p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      <div>
+        {data.results.map(pk => (
+          <Link href={`/pokemon/${pk.name}`}>
+            <h1>{pk.name}</h1>
+          </Link>
+        ))}
+      </div>
+      
+    </Layout>
+  );
+}
+
+/*
+<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
@@ -41,6 +51,4 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section>
-    </Layout>
-  );
-}
+*/

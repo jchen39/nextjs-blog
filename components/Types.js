@@ -4,11 +4,10 @@ import utilStyles from '../styles/utils.module.css'
 function Types({ type, typeUrl }) {
   const [data, setData] = useState(null);
 
-  // Define a function to fetch data using the apiUrl
   const fetchData = async () => {
-    const response = await fetch(typeUrl);
-    const jsonData = await response.json();
-    setData(jsonData);
+    const res = await fetch(typeUrl);
+    const data = await res.json();
+    setData(data);
   };
 
   useEffect(() => {
@@ -16,11 +15,23 @@ function Types({ type, typeUrl }) {
   }, [typeUrl]);
 
   return (
-    <div className={utilStyles.tooltip}>
-      <span> {type} </span>
-      <p className={utilStyles.tooltiptext}>{type}</p>
+    <div style={{display: 'inline-flex'}} className={utilStyles[type]}>
+      {type}
     </div>
   )
 }
+
+/*
+<p>weaknesses:</p>
+      {data ? (
+        <div className={utilStyles.container}>
+          {data.damage_relations.double_damage_from.map((types) => (
+            <p className={utilStyles[types.name]}>{types.name}</p>
+          ))}
+        </div>
+      ) : (
+        <p>Loading data...</p>
+      )}
+*/
 
 export default Types

@@ -51,31 +51,228 @@
   color: #666;
 }
 
-/* Tooltip container */
-.tooltip {
-  position: relative;
-  display: inline-block;
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
-/* Tooltip text */
-.tooltip .tooltiptext {
-  visibility: hidden;
+.font {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ability {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  width: 720px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-style: solid;
+  border-color: green;
+}
+
+.grass {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
   width: 120px;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -60px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
- 
-  /* Position the tooltip text - see examples below! */
-  position: absolute;
-  z-index: 1;
+  background-color: green;
+  border-radius: 16px;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-  visibility: visible;
+.poison {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: purple;
+  color: white;
+  border-radius: 16px;
+}
+
+.fire {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: red;
+  border-radius: 16px;
+}
+
+.water {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: cornflowerblue;
+  border-radius: 16px;
+}
+
+.flying {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: skyblue;
+  border-radius: 16px;
+}
+
+.bug {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: yellowgreen;
+  border-radius: 16px;
+}
+
+.dark {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: black;
+  color: white;
+  border-radius: 16px;
+}
+
+.psychic {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: fuchsia;
+  border-radius: 16px;
+}
+
+.ghost {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: darkslategray;
+  color: white;
+  border-radius: 16px;
+}
+
+.fairy {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: fuchsia;
+  border-radius: 16px;
+}
+
+.steel {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: silver;
+  border-radius: 16px;
+}
+
+.electric {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: yellow;
+  border-radius: 16px;
+}
+
+.dragon {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: blue;
+  color: white;
+  border-radius: 16px;
+}
+
+.fighting {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: orangered;
+  border-radius: 16px;
+}
+
+.ground {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: chocolate;
+  border-radius: 16px;
+}
+
+.rock {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: tan;
+  border-radius: 16px;
+}
+
+.normal {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: beige;
+  border-radius: 16px;
+}
+
+.ice {
+  justify-content: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  width: 120px;
+  background-color: lightblue;
+  border-radius: 16px;
+}
+
+.progresscontainer {
+  background-color: gainsboro;
+  height: 20px;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 1%;
+}
+
+.progress {
+  background-color: lime;
+  height: 20px;
+  border-radius: 10px;
+  width: var(--progress-width, 50%);
 }

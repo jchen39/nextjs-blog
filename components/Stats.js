@@ -14,13 +14,22 @@ function Stats({ pokemon }) {
     fetchData();
   }, [pokemon]);
 
+  const uppercase = (word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1)
+  }
+
+  const multiWord = (word) => {
+    //return uppercase(word.replace('-', ' '));
+    return word.includes('-') ? uppercase(word.split('-')[0]) + ' ' + uppercase(word.split('-')[1]) : uppercase(word)
+  }
+
   return (
     <div className={utilStyles.font}>
       {data ? (
         <div>
           {data.stats.map((stat) => (
-            <p>{stat.stat.name}: {stat.base_stat}
-            <div className={utilStyles.progresscontainer}>
+            <p>{multiWord(stat.stat.name)}: {stat.base_stat}
+            <div className={utilStyles.progressmax}>
               <div
                 className={utilStyles.progress}
                 style={{ '--progress-width': `${(stat.base_stat/255)*100}%` }}>

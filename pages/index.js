@@ -13,6 +13,10 @@ export async function getStaticProps() {
 }
 
 export default function Home({ data }) {
+  const uppercase = (word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1)
+  }
+
   return (
     <Layout home>
       <Head>
@@ -27,7 +31,7 @@ export default function Home({ data }) {
       <div>
         {data.results.map(pk => (
           <Link href={`/pokemon/${pk.name}`}>
-            <h1>{pk.name}</h1>
+            <h1>{uppercase(pk.name)}</h1>
           </Link>
         ))}
       </div>

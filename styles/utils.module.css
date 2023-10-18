@@ -262,7 +262,7 @@
   border-radius: 16px;
 }
 
-.progresscontainer {
+.progressmax {
   background-color: gainsboro;
   height: 20px;
   border-radius: 10px;
@@ -274,5 +274,5 @@
   background-color: lime;
   height: 20px;
   border-radius: 10px;
-  width: var(--progress-width, 50%);
+  width: var(--progress-width);
 }

@@ -52,13 +52,22 @@ function Moves({ pokemon }) {
     }
   }
 
+  const uppercase = (word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1)
+  }
+
+  const multiWord = (word) => {
+    //return uppercase(word.replace('-', ' '));
+    return word.includes('-') ? uppercase(word.split('-')[0]) + ' ' + uppercase(word.split('-')[1]) : uppercase(word)
+  }
+
   return (
     <div className={utilStyles.font}>
       {data ? (
         <div>
           {moveData.map((move) => (
-            <p>
-              {move.name}
+            <p style={{display: 'flex', gap: '8px'}}>
+              {multiWord(move.name)}
               <Types 
                 type={move.type.name}
                 typeUrl={move.type.url}

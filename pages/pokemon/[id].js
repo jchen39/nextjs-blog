@@ -30,13 +30,17 @@ const noice = (num) => {
   }
 }
 
+const uppercase = (word) => {
+  return word.charAt(0).toUpperCase() + word.slice(1)
+}
+
 export default function Post({ poke }) {
   return (
     <Layout>
       <Head>
-        <title>{poke.name}</title>
+        <title>{uppercase(poke.name)}</title>
       </Head>
-      <h1 className={utilStyles.center}>Hi I'm {poke.name}!</h1>
+      <h1 className={utilStyles.center}>Hi I'm {uppercase(poke.name)}!</h1>
       <img className={utilStyles.center} src={poke.sprites.front_default}/>
       <h2>My weight is {poke.weight}{noice(poke.weight)}</h2>
       <h2>My type is:
@@ -50,7 +54,7 @@ export default function Post({ poke }) {
       <h2>My abilities are:
         {poke.abilities.map(ab => (
           <Abilities
-            ability={ab.ability.name}
+            ability={uppercase(ab.ability.name)}
             abilityUrl={ab.ability.url}
             hidden={ab.is_hidden}
           />
